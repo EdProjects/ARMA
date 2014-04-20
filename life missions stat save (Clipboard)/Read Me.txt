@@ -1,0 +1,39 @@
+//Author : {ZAG}Ed! - www.za-gamers.co.za
+//Please do not claim this work as your own or sell it.
+
+Life missions stat saver:
+
+You must have some experience with Arma 2 scripting to be able to install this.
+
+Installation:
+
+1 - Put the 'lifeserver' folder in your Arma 2 server installation folder.
+
+2 - In your mission folder(unpacked pbo), put the loadclient.sqf and saver.sqf.
+
+3 - In your init.sqf add the following lines.
+	Within the if(isServer) statement put		[] execVM "lifeserver\init.sqf";
+	Within the if(!isDedicated) statement put	[] execVM "saver.sqf";		and		[] execVM "loadclient.sqf";
+
+4 - Edit your savevarfuncs.sqf to match the given one more or less.
+	look at lines 24-26, 28, 52-55, 61-84.
+	
+5 - (OPTIONAL) In your clientloop.sqf. Modify it to save commonly used variables more oftenly to prevent items or money not saving directly after purchases etc.
+
+6 - In the 'lifeserver' folder in rewards.sqf, you can add Player IDs to give donators/vip players extra salary bonuses.
+//////////////////////////////////////////
+7 - run the server.
+
+8 - run WasteLand PersistentDB.exe from inside the lifeserver folder. (create a shortcut).
+Optional - If you don't want to manually flush the stats, just add -flush to the shortcut parameter. example: "path/to/WasteLand PersistentDB.exe" - flush
+
+9 - when you close the arma 2 server, click stop and flush on the WasteLand PersistentDB.exe.
+
+10 - start the arma 2 server and click start on the WasteLand PersistentDB.exe.
+/////////////////////////////////////////
+
+Tip: To make this server automated, just kill the WasteLand PersistentDB.exe together with the server and start it together again with the -flush parameter.
+
+
+If you failed to get this working, you don't have enough experience with Arma 2 scripting.
+Teamspeak: ts.za-gamers.co.za
